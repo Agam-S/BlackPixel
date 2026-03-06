@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PixelDiff from "./PixelDiff";
 
-/* ── HIDE TAB ── */
+/*  HIDE TAB  */
 export function HideControls({ imgData, imgSrc, capacity, onHide, stegoUrl, stegoData }) {
   const [message, setMessage]   = useState("");
   const [password, setPassword] = useState("");
@@ -95,7 +95,7 @@ export function HideControls({ imgData, imgSrc, capacity, onHide, stegoUrl, steg
   );
 }
 
-/* ── EXTRACT TAB ── */
+/*  EXTRACT TAB  */
 export function ExtractControls({ onExtract, extracted }) {
   const [password, setPassword] = useState("");
 
