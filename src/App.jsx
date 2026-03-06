@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import "./index.css";
 import { hideMessage, extractMessage, getCapacity } from "./util";
+import { HideControls, ExtractControls } from "./components/Controls";
 
 // GlitchText component for the logo, which applies a CSS glitch effect
 function GlitchText({ children }) {
@@ -171,6 +172,22 @@ export default function App() {
               />
             </div>
 
+            {tab === "hide" ? (
+              <HideControls
+                imgData={imgData}
+                imgSrc={imgSrc}
+                capacity={capacity}
+                onHide={doHide}
+                stegoUrl={stegoUrl}
+                stegoData={stegoData}
+              />
+            ) : (
+              <ExtractControls
+                onExtract={doExtract}
+                extracted={extracted}
+              />
+            )}
+            
             {status && (
               <div className={`status-bar status-${status.type}`}>
                 <span style={{ opacity: 0.7 }}>
